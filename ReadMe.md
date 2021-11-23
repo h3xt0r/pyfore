@@ -9,7 +9,7 @@ source ~/py39/bin/activate
 
 dentro de el entorno virtual "py39" corremos:
 
-pip install jupyterlab scipy scikit-learn pandas statsmodel
+pip install jupyterlab scipy scikit-learn pandas statsmodel matplotlib selenium bs4
 
 Pandas es una librería que nos proporciona métodos para cargar y manejar datos en python, contiene estructuras como "DataFrame" y "series" para representar datos en python
 
@@ -29,6 +29,13 @@ scikit-learn es una librería para aprendizaje de máquina
 
 http://scikit-learn.org/
 
+Ahora podemos activar el entorno de JupyterLab y accederlo desde un navegador para continuar con la prueba de librerias
+
+Corremos el jupytelab, desde el entorno
 ~~~
-code write
+jupyter-lab
 ~~~
+Y accedemos a la dirección que nos indica desde el navegador.
+
+
+
