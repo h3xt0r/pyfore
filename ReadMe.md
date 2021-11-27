@@ -95,8 +95,24 @@ https://raw.githubusercontent.com/jbrownlee/Datasets/master/daily-total-female-b
 
 # Ch. 5 Basic feature engineering (p26)
 
+Time Series data must be re-framed as a supervised learning dataset before we can start using machine learning algorithms. 
+
+There is no concept of input and output features in time series.
+
+Instead, we must choose the variable to be predicted and use feature engineering to construct all of the inputs that will be used to make predictions for future time steps. 
+
+In this tutorial, you will discover how to perform feature engineering on time series data with Python to model your time series problem with machine learning algorithms.
+
+After completing this tutorial, you will know:
+
+* The rationale and goals of feature engineering time series data.
+* How to develop basic date-time based input features.
+* How to develop more sophisticated lag and sliding window summary statistics features.
+
+## Feature egineering for time series
 
 A time series dataset must be transformed to be modeled as a supervised learning problem.
+
 That is something that looks like:
 
 ~~~
@@ -112,7 +128,12 @@ input 2, output 2
 input 3, output 3
 ~~~
 
-So that we can train a supervised learning algorithm. Input variables are also called features in the field of machine learning, and the task before us is to create or invent new input features from our time series dataset. Ideally, we only want input features that best help the learning methods model the relationship between the inputs (X) and the outputs (y) that we would like to predict. In this tutorial, we will look at three classes of features that we can create from our time series dataset:
+So that we can train a supervised learning algorithm. 
+Input variables are also called features in the field of machine learning, and the task before us is to create or invent new input features from our time series dataset. 
+
+Ideally, we only want input features that best help the learning methods model the relationship between the inputs (X) and the outputs (y) that we would like to predict. 
+
+In this tutorial, we will look at three classes of features that we can create from our time series dataset:
 
 * Date Time Features: these are components of the time step itself for each observation.
 * Lag Features: these are values at prior time steps.
@@ -122,5 +143,21 @@ So that we can train a supervised learning algorithm. Input variables are also c
 ~~~
  https://github.com/Kanbc/ar-model-python/blob/master/data/daily-minimum-temperatures.csv
 ~~~
+
+
+Before we dive into methods for creating input features from our time series data, let’s first review the goal of feature engineering.
+
+## 5.2 Goal of feature engineering. p27
+
+
+The goal of feature engineering is to provide strong and ideally simple relationships between new input features and the output feature for the supervised learning algorithm to model. In effect, we are moving complexity.
+
+Complexity exists in the relationships between the input and output data. In the case of time series, there is no concept of input and output variables; we must invent these too and frame the supervised learning problem from scratch. We may lean on the capability of sophisticated models to decipher the complexity of the problem. We can make the job for these models easier (and even use simpler models) if we can better expose the inherent relationship between inputs
+and outputs in the data.
+
+Complexity exists in the relationships between the input and output data. In the case of time series, there is no concept of input and output variables; we must invent these too and frame the supervised learning problem from scratch. We may lean on the capability of sophisticated models to decipher the complexity of the problem. We can make the job for these models easier (and even use simpler models) if we can better expose the inherent relationship between inputs and outputs in the data.
+
+
+The difficulty is that we do not know the underlying inherent functional relationship between inputs and outputs that we’re trying to expose. If we did know, we probably would not need machine learning. Instead, the only feedback we have is the performance of models developed on the supervised learning datasets or views of the problem we create. In effect, the best default strategy is to use all the knowledge available to create many good datasets from your time series dataset and use model performance (and other project requirements) to help determine what good features and good views of your problem happen to be.
 
 
